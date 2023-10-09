@@ -3,12 +3,10 @@ const Items = require("../models/items");
 module.exports.addItem = async (req, res) => {
   try {
     const { item } = req.body;
-    console.log(item);
     if (!item) {
       throw new Error("Invalid item");
     }
     const oldItem = await Items.findOne({ itemName: item });
-    console.log("oldItem", oldItem);
     if (oldItem) {
       throw new Error("This item already exists");
     }

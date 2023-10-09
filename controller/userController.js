@@ -7,7 +7,6 @@ const TOKEN_KEY = "swerfodsur!@#$123<>?12swe";
 module.exports.userSignUp = async (req, res) => {
   try {
     const { email, password } = req.body;
-    console.log(email, password);
     if (!email) {
       throw new Error("Invalid user email.");
     }
@@ -42,7 +41,6 @@ module.exports.userSignUp = async (req, res) => {
 module.exports.userLogin = async (req, res) => {
   try {
     const { email, password } = req.body;
-    console.log(email, password);
     if (!email) {
       throw new Error("Invalid user email.");
     }
